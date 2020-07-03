@@ -3,6 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>myWebsite</Name>
     <RootNamespace>myWebsite</RootNamespace>
+    <InterpreterId>MSBuild|myWebsiteVenv|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -40,6 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="myWebsite\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="myWebsiteVenv\">
+      <Id>myWebsiteVenv</Id>
+      <Version>3.7</Version>
+      <Description>myWebsiteVenv (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
