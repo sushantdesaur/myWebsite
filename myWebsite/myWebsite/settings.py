@@ -16,6 +16,18 @@ import posixpath
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#Uncomment to check correct directory where templates are stored 
+#print(os.path.join(BASE_DIR,"mainApp\templates"))
+
+#Set template directory path
+TEMPLATES_DIR = os.path.join(BASE_DIR,"templates")
+
+
+ 
+#Set static directory path
+#STATIC_DIR = os.path.join(BASE_DIR, "static")
+##print(STATIC_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -37,6 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mainApp',
+    'blog',
 ]
 
 # Middleware framework
@@ -52,13 +66,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'myWebsite.urls'
+#ROOT_URLCONF = 'mainApp.urls'
+
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC+5:30'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -110,4 +126,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
+'''STATICFILES_DIRS = [
+    STATIC_DIR,
+   ]'''
+
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+
+#print(STATIC_ROOT)
