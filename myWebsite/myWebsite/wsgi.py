@@ -19,6 +19,12 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os
 from django.core.wsgi import get_wsgi_application
 
+'''
+path = 'C:/Users/ekans/Documents/Web Development/myWebsite/myWebsite'
+if path not in sys.path:
+    sys.path.append(path)
+'''
+
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE',
     'myWebsite.settings')
